@@ -31,14 +31,12 @@ app.get('/age',(req,res)=>{
     res.end('年龄19岁')
 })
 
-
 //错误中间件(4个参数)
 app.use(function(err,req,res,next) {
-    console.log(err);
     
+   
 })
 
 app.listen(8080,()=>{
     console.log(`server start 8080`);
-    
 })
