@@ -76,9 +76,11 @@ function createApplication() {
         } = url.parse(req.url, true);
         let hostname = req.headers['host'].split(':')[0];
 
-        req.path = pathname;
-        req.query = query;
-        req.hostname = hostname;
+        Object.assign(req, {
+            path:pathname,
+            query,
+            hostname
+        })
         next();
     })
 
